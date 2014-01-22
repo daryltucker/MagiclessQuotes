@@ -1,0 +1,15 @@
+# MagiclessQuotes
+
+This is a package to allow easy replacement of text when a file is saved.  The goal is to prevent specific characters from being placed into files.  Originally intended to remove magic/curly quotes, MagiclessQuotes can be easily extended to replace any other problematic character.
+
+
+### Default Settings
+
+By default, the following characters are replaced:
+
+ * ’‘
+ * “”
+ * …
+ * —
+ * –
+ * •
