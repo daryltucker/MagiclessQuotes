@@ -13,3 +13,8 @@ By default, the following characters are replaced:
  * —
  * –
  * •
+
+### To Do
+
+* User-specific replacements
+* User-specific file ignores
