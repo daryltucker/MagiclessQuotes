@@ -18,3 +18,8 @@ By default, the following characters are replaced:
 
 * User-specific replacements
 * User-specific file ignores
+
+### Contact
+
+[@MagiclessQuotes](https://twitter.com/MagiclessQuotes)
+[Issue Tracker](https://github.com/daryltucker/MagiclessQuotes/issues)
