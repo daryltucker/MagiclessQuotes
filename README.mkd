@@ -13,6 +13,7 @@ By default, the following characters are replaced:
  * —
  * –
  * •
+ * &
 
 ### To Do
 
