@@ -7,7 +7,7 @@ This is a package to allow easy replacement of text when a file is saved.  The g
 
 By default, the following characters are replaced:
 
- * ’‘\\`
+ * ’‘\`
  * “”
  * …
  * —
