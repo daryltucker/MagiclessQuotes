@@ -14,7 +14,7 @@ class RemoveMagicFromMagic(sublime_plugin.EventListener):
             [u'[—]{1}',u'---'],
             [u'[–]{1}',u'--'],
             [u'[•]{1}',u'*'],
-            [u'[ & ]{1}',u' &amp; '],
+            [u' & ',u' &amp; '],
         ]
         edit = view.begin_edit()
         for replacement in replacements:
