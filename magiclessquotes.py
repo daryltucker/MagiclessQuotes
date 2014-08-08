@@ -8,7 +8,7 @@ import sublime, sublime_plugin
 class RemoveMagicFromMagic(sublime_plugin.EventListener):
     def on_pre_save(self, view):
         replacements = [
-            [u'[’‘`]{1}',u'\''],
+            [u'[’‘]{1}',u'\''],
             [u'[“”]{1}',u'"'],
             [u'[…]{1}',u'...'],
             [u'[—]{1}',u'---'],
