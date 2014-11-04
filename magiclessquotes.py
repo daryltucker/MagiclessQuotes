@@ -6,7 +6,7 @@ __author__ = "Daryl Tucker"
 import sublime, sublime_plugin
 
 class RemoveMagicFromMagicCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
+    def run(self, view, edit):
         replacements = [
             [u'[’‘]{1}',u'\''],
             [u'[“”]{1}',u'"'],
