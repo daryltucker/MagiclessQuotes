@@ -7,6 +7,7 @@ import sublime, sublime_plugin
 
 class RemoveMagicFromMagicCommand(sublime_plugin.TextCommand):
     def run(self, edit):
+        self.edit = edit
         replacements = [
             [u'[’‘]{1}',u'\''],
             [u'[“”]{1}',u'"'],
@@ -24,5 +25,5 @@ class RemoveMagicFromMagicCommand(sublime_plugin.TextCommand):
         self.view.end_edit(edit)
 
 class RunMagic(sublime_plugin.EventListener):
-    def on_pre_save(self, view):
-        view.run_command('remove_magic_from_magic')
+    def on_pre_save(self):
+        self.view.run_command('remove_magic_from_magic')
