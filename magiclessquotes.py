@@ -22,7 +22,7 @@ class RemoveMagicFromMagicCommand(sublime_plugin.TextCommand):
             x = self.view.find_all(replacement[0])
             for position in x:
                 self.view.replace(edit, position, replacement[1])
-        self.view.end_edit(edit)
+        #self.view.end_edit(edit)
 
 class RunMagic(sublime_plugin.EventListener):
     def on_pre_save(self, view):
