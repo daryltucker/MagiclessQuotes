@@ -36,3 +36,5 @@ class RemoveMagicFromMagicCommand(sublime_plugin.TextCommand):
 class RunMagic(sublime_plugin.EventListener):
     def on_pre_save(self, view):
         view.run_command('remove_magic_from_magic')
+
+##############################################################################
