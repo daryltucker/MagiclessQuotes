@@ -30,7 +30,6 @@ class RemoveMagicFromMagicCommand(sublime_plugin.TextCommand):
                 pos = sublime.Region(p[0] - difx, p[1] - difx)
                 self.view.replace(edit, pos, replacement[1])
                 m += 1
-        self.view.end_edit(edit)
 
 
 class RunMagic(sublime_plugin.EventListener):
