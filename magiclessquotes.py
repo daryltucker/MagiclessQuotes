@@ -21,15 +21,8 @@ class RemoveMagicFromMagicCommand(sublime_plugin.TextCommand):
         ]
 
         for replacement in replacements:
-            x = self.view.find_all(replacement[0])
-            dif = 1 - len(replacement[1])
-            m = 0
-            for position in x:
-                difx = m * dif
-                p = list(position)
-                pos = sublime.Region(p[0] - difx, p[1] - difx)
-                self.view.replace(edit, pos, replacement[1])
-                m += 1
+            for region in self.view.find_all(replacement[0]):
+                self.view.replace(edit, region, replacement[1])
 
 
 class RunMagic(sublime_plugin.EventListener):
