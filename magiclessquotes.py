@@ -1,29 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sublime
-import sublime_plugin
+import sublime, sublime_plugin, re
 
 __author__ = "Daryl Tucker"
 
 
 class RemoveMagicFromMagicCommand(sublime_plugin.TextCommand):
     def run(self, edit, user_input=None):
-        self.edit = edit
         replacements = [
-            [u'[’‘]{1}', u'\''],
-            [u'[“”]{1}', u'"'],
-            [u'[…]{1}', u'...'],
-            [u'[—]{1}', u'---'],
-            [u'[–]{1}', u'--'],
-            [u'[•]{1}', u'*'],
-            #[u' & ',u' &amp; '],
+            [u'[‘’]', u'\''],
+            [u'[“”]', u'"'],
+            [u'[…]', u'...'],
+            [u'[—]', u'---'],
+            [u'[–]', u'--'],
+            [u'[•]', u'-']
         ]
 
         for replacement in replacements:
-            for region in self.view.find_all(replacement[0]):
-                self.view.replace(edit, region, replacement[1])
-
+            region = sublime.Region(0, self.view.size())
+            content = self.view.substr(region)
+            content = re.sub(replacement[0], replacement[1], content)
+            self.view.replace(edit, region, content)
 
 class RunMagic(sublime_plugin.EventListener):
     def on_pre_save(self, view):
